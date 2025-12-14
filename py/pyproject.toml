@@ -1,0 +1,43 @@
+[project]
+name = "deepgene"
+version = "0.1.0"
+description = "Gene research tool with interactive shell for rsID lookup"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "dspy>=3.0.4",
+    "gnureadline>=8.2.13",
+    "google-generativeai>=0.8.5",
+    "lxml>=6.0.2",
+    "mygene>=3.2.2",
+    "ollama>=0.6.1",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.1",
+    "rich>=14.2.0",
+]
+
+[project.scripts]
+deepgene = "deepgene.main:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "ruff>=0.14.9",
+]
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 140
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+fixable = ["I"]
+
+[tool.ruff.lint.isort]
+force-single-line = true
+force-sort-within-sections = true
+
+
